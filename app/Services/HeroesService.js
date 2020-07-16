@@ -26,9 +26,16 @@ class HeroesService {
         store.commit("activeHeroes", foundHero)
     }
     addHero(heroId) {
-        _sandBoxApi.post("heroes", store.State.heroes.find(h => h._id == heroId)).then(res => {
+        // debugger
+        _sandBoxApi.post("heroes", store.State.heroes.find(h => h.id == heroId)).then(res => {
             console.log(res)
             this.getMyHeroes()
+        }).catch(err => console.error(err))
+    }
+    deleteHero(heroId) {
+        _sandBoxApi.delete("heroes/" + heroId).then(res => {
+            console.log(res)
+            store.commit("myHeroes", store.State.myHeroes.filter(h => h.id != heroId))
         }).catch(err => console.error(err))
     }
     getMyHeroes() {

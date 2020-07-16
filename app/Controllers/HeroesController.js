@@ -11,7 +11,7 @@ function _drawActiveHero() {
 }
 function _drawMyHeroes() {
   let template = ""
-  let heroes = store.State.heroes;
+  let heroes = store.State.myHeroes;
   heroes.forEach(hero => template += hero.Template)
   document.getElementById("myHeroes").innerHTML = template
 }
@@ -33,8 +33,11 @@ export default class HeroesController {
   getHeroInfo(heroName) {
     _heroesService.getHeroInfo(heroName)
   }
-  addHero(heroId) {
-    _heroesService.addHero(heroId)
+  addHero(heroName) {
+    _heroesService.addHero(heroName)
+  }
+  deleteHero(heroId) {
+    _heroesService.deleteHero(heroId)
   }
 
 }

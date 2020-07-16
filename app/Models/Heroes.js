@@ -1,6 +1,6 @@
 export default class Hero {
     constructor(data) {
-        this._id = data._id
+        this.id = data._id || data.id
         this.name = data.name
         this.img = data.img || data.thumbnail.path + "." + data.thumbnail.extension
         this.description = data.description || "undefined"
@@ -17,13 +17,13 @@ export default class Hero {
         `
         if (this.user) {
             template += `
-            <button class="btn btn-danger my-0 rounded-0 btn-block btn-sm" onclick="app.heroesController.deleteHero('${this._id}')">Release</button>
+            <button class="btn btn-danger my-0 rounded-0 btn-block btn-sm" onclick="app.heroesController.deleteHero('${this.id}')">Release</button>
             </div>
             `
         }
         else {
             template += `
-            <button class="btn btn-success my-0 rounded-0 btn-block btn-sm" onclick="app.heroesController.addHero('${this._id}')">Add to Team</button>
+            <button class="btn btn-success my-0 rounded-0 btn-block btn-sm" onclick="app.heroesController.addHero('${this.id}')">Add to Team</button>
             </div>
             `
         }
