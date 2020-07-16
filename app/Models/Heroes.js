@@ -9,7 +9,7 @@ export default class Hero {
 
     get Template() {
         let template = /* html */ `
-        <div class=" border border-rounded shadow-lg text-center">
+        <div class=" border border-rounded shadow-lg text-center text-white bg-dark">
         <h2>Name: ${this.name}</h2>
         <h2>Description: ${this.description}</h2>
         <img class="img-thumbnail" src="${this.img}" alt="">

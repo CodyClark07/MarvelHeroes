@@ -7,3 +7,8 @@ body {
 main {
     flex-grow: 1;
 }
+
+.bg-marvel{
+    background-image: url(https://wallpaperplay.com/walls/full/8/f/5/323961.jpg);
+
+}
